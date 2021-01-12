@@ -25,33 +25,33 @@ Plaid, Inc.
 
 ## 発表概要
 
-1. アンチパターンから学ぶべき3つの理由
+1. サービスの構成
 1. アンチパターンと回避の実例
    - Data-Driven Migration AntiPattern
    - Reach-In Reporting AntiPattern
-   - アンチパターン3
+   - The Static Contract Pitfall
+   - Grains of Sand Pitfall
+   - The "I was taught to share" AntiPattern
 1. その他のアンチパターン
 
 ---
 
-## アンチパターンから学ぶべき3つの理由
+## サービスの構成
 
-1. 失敗は成功の母
-1. まだパターンが十分に確立してないから
-1. (もう1つ何かある？)
+KARTE のサービス構成図
+![width:800px](./images/service_structure.png)
+- [Migrating to Microservices](https://speakerdeck.com/komukomo/migrating-to-microservices)
 
 ---
 
 ## アンチパターンと回避の実例
 
-[Microservices antipatterns and pitfalls](https://www.oreilly.com/content/microservices-antipatterns-and-pitfalls/) より引用
-
+今回紹介するアンチパターン名は [Microservices antipatterns and pitfalls](https://www.oreilly.com/content/microservices-antipatterns-and-pitfalls/) を引用しました
 1. Data-Driven Migration AntiPattern
 1. Reach-In Reporting AntiPattern
-1. The Timeout AntiPattern
-1. The "I was taught to share" AntiPattern
-1. Grains of Sand Pitfall
 1. The Static Contract Pitfall
+1. Grains of Sand Pitfall
+1. The "I was taught to share" AntiPattern
 
 ---
 
@@ -69,11 +69,17 @@ Plaid, Inc.
 モノリスからマイクロサービスへ
 - フロントエンドから先に移行した
 - バックエンドは後で移行した
+- ほとんどモノレポ
+
+![width:200px](./images/microservice.png)
+
+詳しくは次の資料で
+- [急速な成長を加速させるアーキテクチャ](https://tech.plaid.co.jp/cndt2020tokyo/)
 
 ---
 
 ## アンチパターン 2
-### Reach-In Reporting
+### Reach-In Reporting AntiPattern
 
 - Anti Pattern: レポート作成機能がサービスを跨っている
 - Solution: 非同期イベントプッシュを使うべき
@@ -81,7 +87,7 @@ Plaid, Inc.
 ---
 
 ## アンチパターンの回避 2
-### Reach-In Reporting
+### Reach-In Reporting AntiPattern
 
 レポートデータ
 - (一部の)レポートデータを BigQuery にまとめた
@@ -90,7 +96,6 @@ Plaid, Inc.
 詳しくはエンジニアブログで
 - [BigQueryの監査ログは役に立つ](https://tech.plaid.co.jp/bigquery_audit_log_useful/)
 - [プレイドのCTOが登壇しました！ 〜Google Cloud Next '19 in SFレポート〜](https://tech.plaid.co.jp/google-cloud-next-19-in-sf/)
-- [6,000スロットを使うBigQueryのリソース配分最適化への挑戦](https://tech.plaid.co.jp/bigquery-slot-resource-optmization/)
 
 ---
 
@@ -136,19 +141,14 @@ Plaid, Inc.
 - まだ発展途上で永遠の課題
 
 詳しくはエンジニアブログで
+- [プレイド開発チームにおけるチーム・ジャーニー](https://speakerdeck.com/kadoppe/pureidokai-fa-timuniokerutimuziyani)
 - [Self Contained Systemsの紹介](https://tech.plaid.co.jp/self-contained-systems/)
-- [Kubernetes to Metaparticle. 分散プログラミングへの新しいアプローチ](https://tech.plaid.co.jp/metaparticle/)
+- [GKEにおけるセキュリティ対策と運用](https://inthecloud.withgoogle.com/anthos-day-2001/Google_Cloud_Anthos_Day_200130_Session5.pdf)
 
 ---
 
-### The Timeout
-
-- Anti Pattern: 共通のタイムアウト値を設定するな
-- Solution: サーキットブレーカーを使え
-
----
-
-### The "I was taught to share"
+## アンチパターン 5
+### The "I was taught to share" AntiPattern
 
 - Anti Pattern: 何も考えずに共有するな
 - Solutions: 4つの解決パターン
@@ -156,23 +156,29 @@ Plaid, Inc.
    - Shared Library: 共有ライブラリ
    - Replication: 複製
    - Consolidation: 共有しない
+
+---
+
+## アンチパターンの回避 5
+### The "I was taught to share" AntiPattern
+
+4つを使い分けた
+- 共有プロジェクトは簡単だけどバージョン管理できてない
+- 共有ライブラリを使えばバージョン管理できる
+- バージョン管理できるように移行中（対応するのは難しい）
+
 ---
 
 ### その他のアンチパターン
 
-- 文献1
-- 文献2
-- 文献3
+- [Microservices antipatterns and pitfalls](https://www.oreilly.com/content/microservices-antipatterns-and-pitfalls/) 
+- [Microservices Anti-Patterns: A Taxonomy](https://arxiv.org/pdf/1908.04101.pdf)
+- [Microservices adoption antipatterns](https://microservices.io/microservices/antipatterns/-/the/series/2019/06/18/microservices-adoption-antipatterns.html)
 
 ---
 
 ## まとめ
 
-- アンチパターンから学んでマイクロサービスを構築した
-- 全部のアンチパターンを回避できたわけではない
-
----
-
-## 参考文献
-
-
+- アンチパターンから学んでマイクロサービスの構築に役立てた
+- 既知のアンチパターンを全部回避できたわけではない
+- これから新しいパターンやアンチパターンを確立していきたい
