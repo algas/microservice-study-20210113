@@ -52,14 +52,7 @@ Plaid, Inc.
 1. The Static Contract Pitfall
 1. Grains of Sand Pitfall
 
-マイクロサービスの話は何度もしたのでアンチパターンという別の視点から見直してみる
-
----
-
-### サービスの構成
-
-KARTE のサービス構成図
-![width:800px](./images/service_structure.png)
+マイクロサービスの話は他のメンバーが何度もしてるので「アンチパターン」という別の視点から見直してみる
 
 ---
 
@@ -144,21 +137,21 @@ KARTE のサービス構成図
 ### Grains of Sand Pitfall
 
 - チームの境界とサービスの境界を合わせる
-- 逆コンウェイの法則
+- 逆コンウェイの法則(アーキテクチャのための組織を作る)
 - まだ発展途上で永遠の課題
 
 詳しくはエンジニアブログで
 - [プレイド開発チームにおけるチーム・ジャーニー](https://speakerdeck.com/kadoppe/pureidokai-fa-timuniokerutimuziyani)
 - [Self Contained Systemsの紹介](https://tech.plaid.co.jp/self-contained-systems/)
-- [GKEにおけるセキュリティ対策と運用](https://inthecloud.withgoogle.com/anthos-day-2001/Google_Cloud_Anthos_Day_200130_Session5.pdf)
 
 ---
 
 ### その他のアンチパターン
 
 - The “I Was Taught to Share” AntiPattern
-- Are We There Yet Pitfall
 - The Timeout AntiPattern
+- Are We There Yet Pitfall
+- Give It a Rest Pitfall
 
 ここでは詳しくは紹介しません
 
