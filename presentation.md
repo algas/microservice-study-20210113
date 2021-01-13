@@ -31,7 +31,6 @@ Plaid, Inc.
    - Reach-In Reporting AntiPattern
    - The Static Contract Pitfall
    - Grains of Sand Pitfall
-   - The "I was taught to share" AntiPattern
 1. その他のアンチパターン
 
 ---
@@ -46,12 +45,13 @@ KARTE のサービス構成図
 
 ## アンチパターンと回避の実例
 
-今回紹介するアンチパターン名は [Microservices antipatterns and pitfalls](https://www.oreilly.com/content/microservices-antipatterns-and-pitfalls/) を引用しました
+今回紹介するアンチパターンは [Microservices antipatterns and pitfalls](https://www.oreilly.com/content/microservices-antipatterns-and-pitfalls/) から4つを引用
 1. Data-Driven Migration AntiPattern
 1. Reach-In Reporting AntiPattern
 1. The Static Contract Pitfall
 1. Grains of Sand Pitfall
-1. The "I was taught to share" AntiPattern
+
+マイクロサービスの話は何度もしたのでアンチパターンという別の視点から見直してみる
 
 ---
 
@@ -66,12 +66,10 @@ KARTE のサービス構成図
 ## アンチパターンの回避 1
 ### Data-Driven Migration AntiPattern
 
-モノリスからマイクロサービスへ
+具体例：モノリスからマイクロサービスへの移行
 - フロントエンドから先に移行した
-- バックエンドは後で移行した
-- ほとんどモノレポ
 
-![width:200px](./images/microservice.png)
+![width:400px](./images/microservice.png)
 
 詳しくは次の資料で
 - [急速な成長を加速させるアーキテクチャ](https://tech.plaid.co.jp/cndt2020tokyo/)
@@ -89,13 +87,13 @@ KARTE のサービス構成図
 ## アンチパターンの回避 2
 ### Reach-In Reporting AntiPattern
 
-レポートデータ
+具体例：レポートデータ
 - (一部の)レポートデータを BigQuery にまとめた
 - リアルタイムレスポンスが必要なレポートにはキャッシュを使った
 
 詳しくはエンジニアブログで
 - [BigQueryの監査ログは役に立つ](https://tech.plaid.co.jp/bigquery_audit_log_useful/)
-- [プレイドのCTOが登壇しました！ 〜Google Cloud Next '19 in SFレポート〜](https://tech.plaid.co.jp/google-cloud-next-19-in-sf/)
+- [PLAID's Journey to Global Large-Scale Real-Time Analytics With Google BigQuery](https://tech.plaid.co.jp/google-cloud-next-19-in-sf/)
 
 ---
 
@@ -112,7 +110,7 @@ KARTE のサービス構成図
 ## アンチパターンの回避 3
 ### The Static Contract Pitfall
 
-秘密情報の管理
+具体例：秘密情報の管理
 - Schema Versioning
 - 秘密情報の管理に Secret Manager を使った
 - k8s では External Secret で秘密情報を管理している
@@ -147,38 +145,25 @@ KARTE のサービス構成図
 
 ---
 
-## アンチパターン 5
-### The "I was taught to share" AntiPattern
-
-- Anti Pattern: 何も考えずに共有するな
-- Solutions: 4つの解決パターン
-   - Shared Project: 共有プロジェクト
-   - Shared Library: 共有ライブラリ
-   - Replication: 複製
-   - Consolidation: 共有しない
-
----
-
-## アンチパターンの回避 5
-### The "I was taught to share" AntiPattern
-
-4つを使い分けた
-- 共有プロジェクトは簡単だけどバージョン管理できてない
-- 共有ライブラリを使えばバージョン管理できる
-- バージョン管理できるように移行中（対応するのは難しい）
-
----
-
 ### その他のアンチパターン
 
-- [Microservices antipatterns and pitfalls](https://www.oreilly.com/content/microservices-antipatterns-and-pitfalls/) 
-- [Microservices Anti-Patterns: A Taxonomy](https://arxiv.org/pdf/1908.04101.pdf)
-- [Microservices adoption antipatterns](https://microservices.io/microservices/antipatterns/-/the/series/2019/06/18/microservices-adoption-antipatterns.html)
+- The “I Was Taught to Share” AntiPattern
+- Are We There Yet Pitfall
+- The Timeout AntiPattern
+
+ここでは詳しくは紹介しません
 
 ---
 
 ## まとめ
 
-- アンチパターンから学んでマイクロサービスの構築に役立てた
+- アンチパターンはマイクロサービスの構築に役立つ
 - 既知のアンチパターンを全部回避できたわけではない
 - これから新しいパターンやアンチパターンを確立していきたい
+
+---
+
+## 参考文献
+
+- [Microservices antipatterns and pitfalls](https://www.oreilly.com/content/microservices-antipatterns-and-pitfalls/) 
+- [Microservices Anti-Patterns: A Taxonomy](https://arxiv.org/pdf/1908.04101.pdf)
