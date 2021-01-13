@@ -25,7 +25,7 @@ Plaid, Inc.
 
 ## 発表概要
 
-1. サービスの構成
+1. なぜアンチパターンから学ぶのか？
 1. アンチパターンと回避の実例
    - Data-Driven Migration AntiPattern
    - Reach-In Reporting AntiPattern
@@ -35,11 +35,12 @@ Plaid, Inc.
 
 ---
 
-## サービスの構成
+## なぜアンチパターンから学ぶのか？
 
-KARTE のサービス構成図
-![width:800px](./images/service_structure.png)
-- [Migrating to Microservices](https://speakerdeck.com/komukomo/migrating-to-microservices)
+「他人の失敗から学べ。すべての失敗を為せるほどには人生は長くない。」
+
+> "Learn from the mistakes of others. You can't live long enough to make them all yourself."
+[Eleanor Roosevelt](https://www.goodreads.com/quotes/6521824-learn-from-the-mistakes-of-others-you-can-t-live-long)
 
 ---
 
@@ -52,6 +53,13 @@ KARTE のサービス構成図
 1. Grains of Sand Pitfall
 
 マイクロサービスの話は何度もしたのでアンチパターンという別の視点から見直してみる
+
+---
+
+### サービスの構成
+
+KARTE のサービス構成図
+![width:800px](./images/service_structure.png)
 
 ---
 
@@ -72,6 +80,7 @@ KARTE のサービス構成図
 ![width:400px](./images/microservice.png)
 
 詳しくは次の資料で
+- [Migrating to Microservices](https://speakerdeck.com/komukomo/migrating-to-microservices)
 - [急速な成長を加速させるアーキテクチャ](https://tech.plaid.co.jp/cndt2020tokyo/)
 
 ---
